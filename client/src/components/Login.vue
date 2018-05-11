@@ -4,11 +4,10 @@
 
     <div class="white elevation-2">
       <v-toolbar flat dense class="cyan" dark>
-      <v-toolbar-title>Register</v-toolbar-title>  
+      <v-toolbar-title>Login</v-toolbar-title>  
        </v-toolbar>
 
       <div class="pl-4 pr-4 pt-2 pb-2">
-        <form name="playlist-form" autocomplete="off">
         <v-text-field
           label="Email"
           v-model="email"
@@ -19,13 +18,12 @@
           type="password"
           v-model="password"
         ></v-text-field>
-        </form>
     <br>
        <div class="error" v-html="error"></div>
 
        <br>
 
-       <v-btn class="cyan" @click="register" dark>Register</v-btn>
+       <v-btn class="cyan" @click="login" dark>Login</v-btn>
       </div>
 
     </div>
@@ -48,14 +46,14 @@ export default {
       }
     },
     methods:{
-      async register(){
+      async login(){
         try {
-          const response = await authService.register({
+          const response = await authService.login({
           email: this.email,
           password: this.password
-        })
-        this.$store.dispatch('setToken', response.token)
-        this.$store.dispatch('setUser', response.user)
+        })  
+        this.$store.dispatch('setToken', response.data.token)
+        this.$store.dispatch('setUser', response.data.user)
         } catch(error) {
           this.error = error.response.data.error
         }

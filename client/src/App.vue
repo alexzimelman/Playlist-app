@@ -1,13 +1,25 @@
 <template>
-  <div id="app">
-    
-    <router-view/>
+
+    <div id="app">
+    <v-app>
+           <header-page />
+      <v-content>
+        <v-container fluid>
+            <router-view></router-view>
+        </v-container>
+      </v-content>
+    </v-app>
   </div>
+
 </template>
 
 <script>
+import HeaderPage from '@/components/Header.vue' 
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    HeaderPage
+  }
 }
 </script>
 
@@ -20,4 +32,6 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+
 </style>
