@@ -1,13 +1,8 @@
 <template>
 <v-layout colum>
   <v-flex xs6 offset-xs3>
+    <panel title="Register">
 
-    <div class="white elevation-2">
-      <v-toolbar flat dense class="cyan" dark>
-      <v-toolbar-title>Register</v-toolbar-title>  
-       </v-toolbar>
-
-      <div class="pl-4 pr-4 pt-2 pb-2">
         <form name="playlist-form" autocomplete="off">
         <v-text-field
           label="Email"
@@ -28,7 +23,7 @@
        <v-btn class="cyan" @click="register" dark>Register</v-btn>
       </div>
 
-    </div>
+    </panel>
 
   </v-flex>
 </v-layout>
@@ -38,6 +33,7 @@
 <script>
 
 import authService from '@/services/authService'
+import Panel from '@/components/Panel'
 export default {
   name: 'HelloWorld',
   data () {
@@ -60,6 +56,9 @@ export default {
           this.error = error.response.data.error
         }
       }
+    },
+    components: {
+      Panel
     }
   }
 
