@@ -46,7 +46,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #container{
-    margin-bottom: 150px;
+    margin-bottom: 120px;
 }
 
 .home{
