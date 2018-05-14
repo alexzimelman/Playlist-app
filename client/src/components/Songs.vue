@@ -5,7 +5,7 @@
         <panel title="Songs">
 
             
-                <v-btn fab class="cyan accent-3" light small absolute right middle slot="action" @click="navigateTo({name: 'songs-create'})">
+                <v-btn fab class="cyan accent-3" light medium absolute right middle slot="action" @click="navigateTo({name: 'songs-create'})">
                     <v-icon>add</v-icon>
                 </v-btn>
            
