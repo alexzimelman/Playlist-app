@@ -14,7 +14,7 @@
                             </div>
                         </div>
 
-                        <v-btn dark class="cyan" @click="navitageTo({name: 'song-edit', params: {songId:song.id} })">Edit</v-btn>
+                        <v-btn dark class="green" :to="{name: 'song-edit', params() { return {songId:song.id}} }">Edit</v-btn>
                     </v-flex>
 
                     <v-flex xs6>
@@ -28,20 +28,12 @@
 </template>
 
 <script>
-import Panel from '@/components/Panel'
+
 
 export default {
     props:[
         'song'
     ],
-    methods: {
-        navitageTo(route){
-            this.$router.push(route)
-        }
-    },
-    components:{
-        Panel
-    }
 }
 </script>
 

@@ -16,12 +16,11 @@
         ></v-text-field>
         </form>
     <br>
-       <div class="error" v-html="error"></div>
+       <div class="danger" v-html="error"></div>
 
        <br>
 
        <v-btn class="cyan" @click="register" dark>Register</v-btn>
-      </div>
 
     </panel>
 
@@ -33,7 +32,6 @@
 <script>
 
 import authService from '@/services/authService'
-import Panel from '@/components/Panel'
 export default {
   name: 'HelloWorld',
   data () {
@@ -52,13 +50,13 @@ export default {
         })
         this.$store.dispatch('setToken', response.token)
         this.$store.dispatch('setUser', response.user)
+        this.$router.push({
+          name: 'songs'
+        })
         } catch(error) {
           this.error = error.response.data.error
         }
       }
-    },
-    components: {
-      Panel
     }
   }
 
@@ -66,7 +64,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.error{
+.danger{
   color: red;
 }
 

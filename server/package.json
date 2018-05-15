@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "C:/Users/azime/Desktop/Playlist-app/server/node_modules/nodemon/bin/nodemon.js src/app.js --exec 'npm run lint && node' ",
-    "lint": "C:/Users/azime/Desktop/Playlist-app/server/node_modules/.bin/eslint **/*.js"
+    "lint": "C:/Users/azime/Desktop/Playlist-app/server/node_modules/.bin/eslint **/*.js",
+    "seed": "node ./seed"
   },
   "keywords": [],
   "author": "",
